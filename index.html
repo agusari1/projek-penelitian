@@ -1846,6 +1846,296 @@
 
       <!-- Assessment Section -->
       <div id="assessment" class="content-section">
+        <h1>A. Identitas dan Deskripsi Responden dan Lokasi</h1>
+        <form id="respondenForm">
+          <div class="form-section">
+            <div class="form-group">
+              <label for="nama">Nama Responden</label>
+              <input type="text" id="nama" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="umur">Umur</label>
+              <input
+                type="number"
+                id="umur"
+                class="form-control"
+                min="1"
+                required
+              />
+              tahun
+            </div>
+
+            <div class="form-group">
+              <label>Jenis Kelamin</label>
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="laki"
+                    name="jenis_kelamin"
+                    value="laki"
+                    required
+                  />
+                  <label for="laki" style="width: auto">Laki-laki</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="perempuan"
+                    name="jenis_kelamin"
+                    value="perempuan"
+                  />
+                  <label for="perempuan" style="width: auto">Perempuan</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pekerjaan">Pekerjaan Utama</label>
+              <input type="text" id="pekerjaan" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="lama_tinggal">Lama Tinggal di Lokasi</label>
+              <input
+                type="number"
+                id="lama_tinggal"
+                class="form-control"
+                min="0"
+                required
+              />
+              tahun
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">
+              Lokasi yang Dinilai (dusun, desa, kabupaten)
+            </div>
+
+            <div class="form-group">
+              <label for="lokasi">Lokasi</label>
+              <input type="text" id="lokasi" class="form-control" required />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">
+              Jenis Bencana / Tingkat Risiko Bencana
+            </div>
+
+            <div class="form-group">
+              <label>Jenis Bencana</label>
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="banjir"
+                    name="bencana"
+                    value="banjir"
+                  />
+                  <label for="banjir" style="width: auto">Banjir</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="gempa"
+                    name="bencana"
+                    value="gempa"
+                  />
+                  <label for="gempa" style="width: auto">Gempa</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="longsor"
+                    name="bencana"
+                    value="longsor"
+                  />
+                  <label for="longsor" style="width: auto">Longsor</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="lainnya"
+                    name="bencana"
+                    value="lainnya"
+                  />
+                  <label for="lainnya" style="width: auto">Lainnya:</label>
+                  <input
+                    type="text"
+                    id="lainnya_teks"
+                    class="form-control"
+                    style="flex: 1; margin-left: 5px"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Tingkat Risiko</label>
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="rendah"
+                    name="tingkat_risiko"
+                    value="rendah"
+                    required
+                  />
+                  <label for="rendah" style="width: auto">Rendah</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="sedang"
+                    name="tingkat_risiko"
+                    value="sedang"
+                  />
+                  <label for="sedang" style="width: auto">Sedang</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="tinggi"
+                    name="tingkat_risiko"
+                    value="tinggi"
+                  />
+                  <label for="tinggi" style="width: auto">Tinggi</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">
+              Kedekatan dengan Sumber Penghidupan (Akses Kerja)
+            </div>
+
+            <div class="form-group">
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="sangat_dekat"
+                    name="kedekatan"
+                    value="sangat_dekat"
+                    required
+                  />
+                  <label for="sangat_dekat" style="width: auto"
+                    >Sangat dekat (<500 m) atau di area kerja</label
+                  >
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="kurang_1km"
+                    name="kedekatan"
+                    value="kurang_1km"
+                  />
+                  <label for="kurang_1km" style="width: auto"><1 km</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="1-3km"
+                    name="kedekatan"
+                    value="1-3km"
+                  />
+                  <label for="1-3km" style="width: auto">1–3 km</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="3-5km"
+                    name="kedekatan"
+                    value="3-5km"
+                  />
+                  <label for="3-5km" style="width: auto">3–5 km</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="lebih_5km"
+                    name="kedekatan"
+                    value="lebih_5km"
+                  />
+                  <label for="lebih_5km" style="width: auto"
+                    >>5 km dari sumber penghidupan</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">Status Lahan</div>
+
+            <div class="form-group">
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="milik_pribadi"
+                    name="status_lahan"
+                    value="milik_pribadi"
+                    required
+                  />
+                  <label for="milik_pribadi" style="width: auto"
+                    >Tanah milik pribadi dengan izin jelas</label
+                  >
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="kas_desa"
+                    name="status_lahan"
+                    value="kas_desa"
+                  />
+                  <label for="kas_desa" style="width: auto"
+                    >Kas desa dengan izin</label
+                  >
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="izin_terbatas"
+                    name="status_lahan"
+                    value="izin_terbatas"
+                  />
+                  <label for="izin_terbatas" style="width: auto"
+                    >Tanah milik dengan izin terbatas</label
+                  >
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="sewa_tidak_resmi"
+                    name="status_lahan"
+                    value="sewa_tidak_resmi"
+                  />
+                  <label for="sewa_tidak_resmi" style="width: auto"
+                    >Sewa tidak resmi</label
+                  >
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="radio"
+                    id="tidak_jelas"
+                    name="status_lahan"
+                    value="tidak_jelas"
+                  />
+                  <label for="tidak_jelas" style="width: auto"
+                    >Tidak jelas / legalitas bermasalah</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
         <h2>📊 Penilaian Kondisi Lapangan</h2>
 
         <div class="assessment-form">
