@@ -193,7 +193,7 @@ const tmsData = {
         sdm: "Warga lokal dengan pelatihan singkat",
         transport: "Material lokal, selebihnya diangkut motor roda tiga",
         description:
-        "Shelter bambu khusus untuk area berlereng dengan akses terbatas.",
+            "Shelter bambu khusus untuk area berlereng dengan akses terbatas.",
     },
     "sedang-rendah-sedang": {
         id: "TMS-17",
@@ -203,7 +203,7 @@ const tmsData = {
         technology: "Prefabrikasi ringan, dirakit 3-4 orang",
         sdm: " Semi-terampil dengan panduan teknis",
         transport: "Dikirim dalam komponen modular via truk kecil",
-        description: 
+        description:
             "Shelter untuk area terpencil dengan sumber daya material dan transportasi terbatas namun SDM cukup kompeten.",
     },
     "sedang-rendah-rendah": {
@@ -226,7 +226,7 @@ const tmsData = {
         sdm: "Semi-terampil dengan panduan teknis",
         transport: "Dikirim dalam komponen modular via truk kecil",
         description:
-        "Shelter dasar dengan material alami untuk SDM terbatas.",
+            "Shelter dasar dengan material alami untuk SDM terbatas.",
     },
     "rendah-tinggi-sedang": {
         id: "TMS-20",
