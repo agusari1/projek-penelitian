@@ -584,3 +584,61 @@ h3 {
 .scrollable-content::-webkit-scrollbar-thumb:hover {
   background: #764ba2;
 }
+
+/* form */
+.form-section {
+  margin-bottom: 25px;
+}
+.form-section-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3498db;
+  color: #2c3e50;
+}
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-group label {
+  width: 250px;
+  padding-right: 15px;
+  font-weight: 500;
+}
+.form-control {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.inline-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.inline-group .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+@media (max-width: 600px) {
+  .form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .inline-group .form-group {
+    min-width: 100%;
+  }
+}
