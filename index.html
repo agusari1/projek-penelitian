@@ -12,7 +12,7 @@
         <div class="logo">
           <div class="logo-icon">
             <img
-              src="uii.png"
+              src="logo-uii.png"
               alt="Logo UII"
               style="width: 100%; height: auto"
             />
@@ -68,8 +68,8 @@
                 font-size: 0.9rem;
               "
             >
-              ✅ Mendapatkan masukan pakar atas indikator dan sistem perencanaan
-              TMS
+              1. Memberikan rekomendasi desain shelter secara cepat dalam
+              situasi darurat pasca bencana.
             </li>
             <li
               style="
@@ -80,7 +80,8 @@
                 font-size: 0.9rem;
               "
             >
-              ✅ Memastikan sistem pakar representatif terhadap kondisi lapangan
+              2. Menyediakan solusi berbasis data lapangan yang akurat dan
+              relevan terhadap kondisi aktual.
             </li>
             <li
               style="
@@ -91,13 +92,39 @@
                 font-size: 0.9rem;
               "
             >
-              ✅ Mengidentifikasi perbaikan untuk efektivitas implementasi
+              3. Mengelompokkan kompleksitas data menjadi kategori kesiapan
+              (Tinggi, Sedang, Rendah) agar lebih mudah dipahami dan diterapkan.
+            </li>
+            <li
+              style="
+                margin: 8px 0;
+                padding: 8px;
+                background: #e8f4f8;
+                border-radius: 6px;
+                font-size: 0.9rem;
+              "
+            >
+              4. Menghasilkan desain shelter yang sesuai dengan kombinasi
+              kondisi sumber daya manusia, lokasi, dan material lokal.
+            </li>
+            <li
+              style="
+                margin: 8px 0;
+                padding: 8px;
+                background: #e8f4f8;
+                border-radius: 6px;
+                font-size: 0.9rem;
+              "
+            >
+              5. Mendukung Perencanaan Tanggap Darurat yang Adaptif dengan
+              menjamin bahwa hasil desain dapat dengan mudah diimplementasikan
+              di berbagai lokasi bencana.
             </li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Topik Diskusi</h3>
+          <h3>Indikator Tingkat Kesiapan</h3>
           <p style="font-size: 0.9rem; margin-bottom: 10px">
             Menganalisis dan mengintegrasikan indikator dalam pengambilan
             keputusan perencanaan Temporary Modular Shelter (TMS) guna
@@ -111,24 +138,34 @@
         </div>
 
         <div class="card">
-          <h3>Metodologi</h3>
+          <h3>Cara Kerja System Pengambilan Keputusan</h3>
           <p style="font-size: 0.9rem; margin-bottom: 10px">
-            Sistem menggunakan <strong>algoritma Decision Tree</strong> untuk
-            merancang rekomendasi desain TMS yang optimal. Keunggulan metode
-            ini:
+            Sistem pengambilan keputusan ini dirancang untuk membantu menentukan
+            desain Temporary Modular Shelter (TMS) yang paling sesuai dengan
+            kondisi di lapangan. Cara kerja sistem ini memiliki beberapa
+            keunggulan utama:
           </p>
-          <ul style="margin: 10px 0; padding-left: 20px; font-size: 0.9rem">
-            <li>Kemudahan implementasi</li>
-            <li>Fleksibilitas terhadap berbagai jenis data</li>
-            <li>Interpretasi hasil yang jelas dan transparan</li>
-            <li>Visualisasi pohon keputusan yang mudah dipahami</li>
-          </ul>
+          <ol style="margin: 10px 0; padding-left: 20px; font-size: 0.9rem">
+            <li>Mudah diterapkan di berbagai situasi darurat.</li>
+            <li>
+              Mampu menyesuaikan dengan berbagai jenis data yang dikumpulkan
+              dari lapangan.
+            </li>
+            <li>
+              Memberikan hasil yang jelas dan transparan, sehingga mudah
+              dipahami.
+            </li>
+            <li>
+              Menampilkan proses pengambilan keputusan dalam bentuk visual, agar
+              lebih mudah dijelaskan dan digunakan.
+            </li>
+          </ol>
         </div>
       </div>
 
       <!-- Location Accessibility Section -->
       <div id="location" class="content-section">
-        <h2>📍 Faktor Keterjangkauan Lokasi</h2>
+        <h2>📍 Indikator Keterjangkauan Lokasi</h2>
 
         <div class="validation-result">
           <h3>✅ Hasil Validasi</h3>
@@ -171,32 +208,39 @@
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Akses darat rusak parah (≥50%)</span
+                    >Terdapat akses darat, namun mengalami kerusakan parah (≥
+                    50%)</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Akses darat rusak sedang (20-50%)</span
-                  >
+                    >Terdapat akses darat dengan kerusakan sedang (20 50%)
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Akses darat baik (0-19%)</span
-                  >
+                    >Akses darat dalam kondisi baik (kerusakan 0 19%)
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td><strong>Jarak dari Pusat Logistik</strong></td>
-                <td><span class="score-indicator score-1">> 30 km</span></td>
+                <td><strong>Jarak dari Pusat Logistik Utama</strong></td>
+                <td>
+                  <span class="score-indicator score-1">Lebih dari 30 km</span>
+                </td>
                 <td><span class="score-indicator score-2">20-30 km</span></td>
                 <td><span class="score-indicator score-3">10-20 km</span></td>
                 <td><span class="score-indicator score-4">5-10 km</span></td>
-                <td><span class="score-indicator score-5">5 km</span></td>
+                <td>
+                  <span class="score-indicator score-5">kurang dari 5 km</span>
+                </td>
               </tr>
               <tr>
                 <td>3</td>
-                <td><strong>Jenis Kendaraan</strong></td>
+                <td>
+                  <strong>Jenis Kendaraan yang Dapat Mengakses Lokasi</strong>
+                </td>
                 <td>
                   <span class="score-indicator score-1"
                     >Tidak dapat dilalui kendaraan</span
@@ -204,68 +248,96 @@
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Hanya sepeda motor</span
+                    >Hanya dilalui sepeda motor</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Kendaraan tertentu</span
+                    >Dapat dilalui kendaraan tertentu</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Kendaraan kecil-sedang</span
-                  >
+                    >Dapat dilalui kendaraan kecil dan sedang
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-5">Truk/tronton</span>
+                  <span class="score-indicator score-5"
+                    >Dapat dilalui kendaraan besar seperti truk atau tronton
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td>4</td>
-                <td><strong>Transportasi Umum</strong></td>
+                <td><strong>Ketersediaan Transportasi Umum</strong></td>
                 <td>
                   <span class="score-indicator score-1">Tidak tersedia</span>
                 </td>
                 <td>
-                  <span class="score-indicator score-2">Maksimal 1x/hari</span>
+                  <span class="score-indicator score-2"
+                    >Tersedia maksimal satu kali dalam sehari</span
+                  >
                 </td>
-                <td><span class="score-indicator score-3">2-8x/hari</span></td>
-                <td><span class="score-indicator score-4">9-12x/hari</span></td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >Tersedia 2-8 kali dalam sehari
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Tersedia 9-12 kali dalam sehari
+                  </span>
+                </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Tersedia setiap saat</span
+                    >Tersedia setiap saat (akses daring/online)</span
                   >
                 </td>
               </tr>
               <tr>
                 <td>5</td>
-                <td><strong>Waktu Tempuh</strong></td>
-                <td><span class="score-indicator score-1">> 3 jam</span></td>
+                <td><strong>Waktu Tempuh dari Pusat Logistik Utama</strong></td>
+                <td>
+                  <span class="score-indicator score-1">Lebih dari 3 jam</span>
+                </td>
                 <td><span class="score-indicator score-2">2-3 jam</span></td>
                 <td><span class="score-indicator score-3">1-2 jam</span></td>
                 <td>
                   <span class="score-indicator score-4">30-60 menit</span>
                 </td>
-                <td><span class="score-indicator score-5">< 30 menit</span></td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >kurang dari 30 menit</span
+                  >
+                </td>
               </tr>
               <tr>
                 <td>6</td>
-                <td><strong>Kondisi Lingkungan</strong></td>
+                <td><strong>Kondisi Lingkungan Proyek</strong></td>
                 <td>
-                  <span class="score-indicator score-1">Buruk (>15%)</span>
+                  <span class="score-indicator score-1"
+                    >Kondisi buruk dengan kemiringan lahan > 15%</span
+                  >
                 </td>
                 <td>
-                  <span class="score-indicator score-2">Kurang (12-15%)</span>
+                  <span class="score-indicator score-2"
+                    >Kondisi kurang baik dengan kemiringan lahan 12-15%
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-3">Sedang (9-11%)</span>
+                  <span class="score-indicator score-3"
+                    >Kondisi sedang dengan kemiringan lahan 9-11%</span
+                  >
                 </td>
                 <td>
-                  <span class="score-indicator score-4">Baik (6-8%)</span>
+                  <span class="score-indicator score-4"
+                    >Kondisi baik dengan kemiringan lahan 6-8%
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-5">Ideal (2,5-5%)</span>
+                  <span class="score-indicator score-5"
+                    >Kondisi ideal dengan kemiringan lahan 2,5-5%
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -273,7 +345,7 @@
         </div>
 
         <div class="card">
-          <h3>Kategori Penilaian</h3>
+          <h3>Penilaian Total Keterjangkauan LokasiPenilaian</h3>
           <div class="responsive-grid">
             <div
               style="
@@ -298,7 +370,10 @@
               "
             >
               <strong>Sedang (18-24)</strong><br />
-              <small>Akses cukup baik, perlu sedikit dukungan tambahan</small>
+              <small
+                >Akses cukup baik, namun perlu sedikit dukungan tambahan (alat
+                kecil, distribusi lokal)</small
+              >
             </div>
             <div
               style="
@@ -310,7 +385,8 @@
             >
               <strong>Rendah (≤17)</strong><br />
               <small
-                >Lokasi sulit dijangkau, memerlukan perencanaan khusus</small
+                >Lokasi sulit dijangkau, memerlukan perencanaan khusus logistik
+                dan SDM tambahan</small
               >
             </div>
           </div>
@@ -319,10 +395,10 @@
 
       <!-- SDM Section -->
       <div id="sdm" class="content-section">
-        <h2>👷 Faktor Ketersediaan SDM</h2>
+        <h2>👷 Indikator Ketersediaan SDM</h2>
 
         <div class="validation-result">
-          <h3>✅ Hasil Validasi (Setelah Revisi)</h3>
+          <h3>✅ Hasil Validasi</h3>
           <p>
             <strong>Validitas:</strong> Semua indikator menunjukkan korelasi
             Pearson > 0,9 dengan p-value < 0,001
@@ -349,36 +425,37 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td><strong>Sertifikasi Konstruksi</strong></td>
+                <td><strong>Sertifikasi di Bidang Konstruksi</strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >Tidak memiliki sertifikasi</span
+                    >Tidak memiliki sertifikasi apapun</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Sertifikasi tidak relevan</span
+                    >Memiliki sertifikasi yang tidak relevan</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Sertifikasi relevan tidak terdaftar BNSP</span
-                  >
+                    >Memiliki sertifikasi relevan tetapi tidak terdaftar di BNSP
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >1 sertifikasi relevan BNSP</span
-                  >
+                    >Memiliki satu sertifikasi relevan yang terdaftar di BNSP
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >>1 sertifikasi relevan BNSP</span
+                    >Memiliki lebih dari satu sertifikasi relevan yang terdaftar
+                    di BNSP</span
                   >
                 </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td><strong>Kemampuan Gambar Teknik</strong></td>
+                <td><strong>Kemampuan dalam Membaca Gambar Teknik </strong></td>
                 <td>
                   <span class="score-indicator score-1"
                     >Tidak mampu membaca gambar</span
@@ -386,23 +463,24 @@
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Gambar sederhana/non-teknis</span
+                    >Mampu membaca gambar sederhana/non-teknis</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Membaca & meniru gambar teknis</span
+                    >Mampu membaca dan meniru gambar teknis</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Membaca & mengedit gambar teknis</span
+                    >Mampu membaca dan mengedit gambar teknis</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Membuat gambar kompleks (AutoCAD)</span
-                  >
+                    >Mampu membaca dan membuat gambar teknis kompleks (misalnya
+                    AutoCAD)
+                  </span>
                 </td>
               </tr>
               <tr>
@@ -410,64 +488,121 @@
                 <td><strong>Penggunaan Alat Teknis</strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >Tidak pernah menggunakan</span
+                    >Tidak pernah menggunakan alat</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Jarang (10 tahun terakhir)</span
-                  >
+                    >Jarang menggunakan alat (pernah digunakan dalam jangka
+                    waktu 10 tahun terakhir)
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Kadang (5 tahun terakhir)</span
-                  >
+                    >Kadang kadang menggunakan alat (dalam 5 tahun terakhir)
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Sering (3 tahun terakhir)</span
+                    >Sering menggunakan alat (dalam 3 tahun terakhir)</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Selalu (1 tahun terakhir)</span
-                  >
+                    >Selalu menggunakan alat (dalam 1 tahun terakhir)
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td>4</td>
-                <td><strong>Pengalaman Konstruksi</strong></td>
+                <td><strong>Pengalaman Kerja di Bidang Konstruksi </strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >Tidak ada/< 1 tahun</span
-                  >
-                </td>
-                <td><span class="score-indicator score-2">1-2 tahun</span></td>
-                <td><span class="score-indicator score-3">3-4 tahun</span></td>
-                <td><span class="score-indicator score-4">5-6 tahun</span></td>
-                <td><span class="score-indicator score-5">> 6 tahun</span></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><strong>Keterlibatan Proyek Sejenis</strong></td>
-                <td>
-                  <span class="score-indicator score-1"
-                    >Tidak pernah terlibat</span
-                  >
+                    >Tidak memiliki pengalaman atau pengalaman kurang dari 1
+                    tahun
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-2">Sebagai pekerja</span>
+                  <span class="score-indicator score-2"
+                    >Memiliki pengalaman selama 1-2 tahun
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-3">Sebagai tukang</span>
+                  <span class="score-indicator score-3"
+                    >Memiliki pengalaman selama 3-4 tahun
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Sebagai kepala tukang</span
+                    >Memiliki pengalaman selama 5-6 tahun
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Memiliki pengalaman lebih dari 6 tahun di bidang konstruksi
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>Keterlibatan dalam Proyek Sejenis </strong></td>
+                <td>
+                  <span class="score-indicator score-1"
+                    >Tidak pernah terlibat dalam proyek
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-2"
+                    >Pernah terlibat sebagai pekerja</span
                   >
                 </td>
                 <td>
-                  <span class="score-indicator score-5">Sebagai mandor</span>
+                  <span class="score-indicator score-3"
+                    >Pernah terlibat sebagai tukang
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Pernah terlibat sebagai kepala tukang
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Pernah terlibat sebagai mandor
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>
+                  <strong
+                    >Pelatihan Konstruksi (dalam Pengalaman/Keterlibatan)
+                  </strong>
+                </td>
+                <td>
+                  <span class="score-indicator score-1"
+                    >Tidak pernah ikut pelatihan
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-2"
+                    >Ikut pelatihan >5 tahun lalu
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >Ikut pelatihan >3 tahun lalu
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Pelatihan dalam 1 tahun terakhir
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Aktif dalam pelatihan dan jadi trainer
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -475,7 +610,7 @@
         </div>
 
         <div class="card">
-          <h3>Kategori Penilaian SDM</h3>
+          <h3>Penilaian Total Ketersediaan SDM (Sumber Daya Manusia)</h3>
           <div class="responsive-grid">
             <div
               style="
@@ -485,7 +620,7 @@
                 border-left: 4px solid #28a745;
               "
             >
-              <strong>Tinggi (21-25)</strong><br />
+              <strong>Tinggi (25-30)</strong><br />
               <small
                 >SDM sangat siap, terampil, dan mampu membangun TMS secara
                 mandiri dengan kualitas baik</small
@@ -499,10 +634,10 @@
                 border-left: 4px solid #ffc107;
               "
             >
-              <strong>Sedang (15-20)</strong><br />
+              <strong>Sedang (18-24)</strong><br />
               <small
                 >SDM cukup kompeten, memerlukan arahan teknis atau pelatihan
-                singkat</small
+                singkat untuk efisiensi kerja</small
               >
             </div>
             <div
@@ -513,7 +648,7 @@
                 border-left: 4px solid #dc3545;
               "
             >
-              <strong>Rendah (<14)</strong><br />
+              <strong>Rendah (≤17)</strong><br />
               <small
                 >SDM belum siap, memerlukan pelatihan intensif atau tenaga
                 bantuan dari luar</small
@@ -525,10 +660,10 @@
 
       <!-- Material Section -->
       <div id="material" class="content-section">
-        <h2>🧱 Faktor Ketersediaan Material Lokal</h2>
+        <h2>🧱 Indikator Ketersediaan Material</h2>
 
         <div class="validation-result">
-          <h3>✅ Hasil Validasi (Setelah Revisi)</h3>
+          <h3>✅ Hasil Validasi</h3>
           <p>
             <strong>Validitas:</strong> Semua indikator menunjukkan korelasi
             Pearson > 0,9 dengan p-value < 0,001
@@ -555,101 +690,185 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td><strong>Volume Material Tersedia</strong></td>
                 <td>
-                  <span class="score-indicator score-1">< 50% kebutuhan</span>
+                  <strong>Volume Material Lokal Tersedia yang Tersedia</strong>
                 </td>
-                <td><span class="score-indicator score-2">50-59%</span></td>
-                <td><span class="score-indicator score-3">60-79%</span></td>
-                <td><span class="score-indicator score-4">80-90%</span></td>
-                <td><span class="score-indicator score-5">91-100%</span></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><strong>Keanekaragaman Jenis Material</strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >< 20% jenis tersedia</span
-                  >
-                </td>
-                <td><span class="score-indicator score-2">21-30%</span></td>
-                <td><span class="score-indicator score-3">31-40%</span></td>
-                <td><span class="score-indicator score-4">41-50%</span></td>
-                <td><span class="score-indicator score-5">> 51%</span></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><strong>Kemudahan Mendapatkan</strong></td>
-                <td>
-                  <span class="score-indicator score-1"
-                    >Tidak dapat memperoleh</span
+                    >Kurang dari 50% dari total kebutuhan material</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Sulit diakses (offline, lambat)</span
-                  >
+                    >50-59% dari total kebutuhan
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-3">Kemudahan sedang</span>
+                  <span class="score-indicator score-3"
+                    >60-79% dari total kebutuhan
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Mudah diperoleh (offline)</span
+                    >80-90% dari total kebutuhan</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Sangat mudah (online)</span
+                    >91-100% dari total kebutuhan</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Keanekaragaman Jenis Material Lokal</strong></td>
+                <td>
+                  <span class="score-indicator score-1"
+                    >Kurang dari 20% jenis material yang diperlukan tersedia
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-2"
+                    >21-30% jenis material tersedia
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >31-40% jenis material tersedia
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >41-50% jenis material tersedia
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Lebih dari 51% jenis material tersedia
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Kemudahan dalam Mendapatkan Material</strong></td>
+                <td>
+                  <span class="score-indicator score-1"
+                    >Tidak dapat memperoleh material</span
+                  >
+                </td>
+                <td>
+                  <span class="score-indicator score-2"
+                    >Material tersedia tetapi sulit diakses (lambat, offline,
+                    dan stok tidak pasti)</span
+                  >
+                </td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >Material tersedia dengan tingkat kemudahan sedang (offline
+                    dan lambat)
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Material tersedia dan mudah diperoleh (dapat dipesan, namun
+                    masih secara offline)
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Material tersedia dan sangat mudah diperoleh (dapat dipesan
+                    secara online)</span
                   >
                 </td>
               </tr>
               <tr>
                 <td>4</td>
-                <td><strong>Harga dan Stabilitas</strong></td>
+                <td><strong>Harga dan Stabilitas Biaya Material</strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >Mahal, fluktuasi >10%</span
+                    >Harga mahal dengan fluktuasi lebih dari 10%</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-2"
-                    >Mahal, fluktuasi 8-9%</span
+                    >Harga mahal dengan fluktuasi 8-9%</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-3"
-                    >Mahal, fluktuasi 6-7%</span
+                    >Harga mahal dengan fluktuasi 6-7%</span
                   >
                 </td>
                 <td>
                   <span class="score-indicator score-4"
-                    >Wajar, fluktuasi 4-5%</span
-                  >
+                    >Harga wajar dengan fluktuasi 4-5%
+                  </span>
                 </td>
                 <td>
                   <span class="score-indicator score-5">
-                    Wajar, fluktuasi <3%
+                    Harga wajar dengan fluktuasi kurang dari 3%
                   </span>
                 </td>
               </tr>
               <tr>
                 <td>5</td>
-                <td><strong>Kemampuan Produksi</strong></td>
+                <td><strong>Kemampuan Produksi Material Lokal</strong></td>
                 <td>
                   <span class="score-indicator score-1"
-                    >Tidak dapat diproduksi</span
-                  >
+                    >Tidak dapat diproduksi secara lokal
+                  </span>
                 </td>
                 <td>
-                  <span class="score-indicator score-2">Sangat lambat</span>
+                  <span class="score-indicator score-2"
+                    >Dapat diproduksi namun sangat lambat
+                  </span>
                 </td>
-                <td><span class="score-indicator score-3">Lambat</span></td>
-                <td><span class="score-indicator score-4">Normal</span></td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >Dapat diproduksi tetapi lambat
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Dapat diproduksi secara normal
+                  </span>
+                </td>
                 <td>
                   <span class="score-indicator score-5"
-                    >Efisien, sesuai kebutuhan</span
-                  >
+                    >Dapat diproduksi dan disesuaikan dengan kebutuhan secara
+                    efisien
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>
+                  <strong
+                    >Kesiapan Utilitas (Air, Listrik, Gas (LPG), Komunikasi)
+                  </strong>
+                </td>
+                <td>
+                  <span class="score-indicator score-1">Tidak tersedia </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-2"
+                    >Tersedia 1 kesiapan utilitas
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-3"
+                    >Tersedia 2 kesiapan utilitas
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-4"
+                    >Tersedia 3 kesiapan utilitas
+                  </span>
+                </td>
+                <td>
+                  <span class="score-indicator score-5"
+                    >Semua tersedia kesiapan utilitas
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -657,7 +876,7 @@
         </div>
 
         <div class="card">
-          <h3>Kategori Penilaian Material Lokal</h3>
+          <h3>Penilaian Total Ketersediaan Material Lokal</h3>
           <div class="responsive-grid">
             <div
               style="
@@ -667,10 +886,10 @@
                 border-left: 4px solid #28a745;
               "
             >
-              <strong>Tinggi (21-25)</strong><br />
+              <strong>Tinggi (25-30)</strong><br />
               <small
                 >Material sangat mudah diperoleh, lengkap, murah, dan tersedia
-                dalam jumlah cukup</small
+                dalam jumlah cukup mendukung pembangunan cepat</small
               >
             </div>
             <div
@@ -681,11 +900,11 @@
                 border-left: 4px solid #ffc107;
               "
             >
-              <strong>Sedang (15-20)</strong><br />
+              <strong>Sedang (18-24)</strong><br />
               <small
-                >Material tersedia namun terbatas, membutuhkan manajemen pasokan
-                tambahan</small
-              >
+                >Material tersedia namun terbatas dalam jenis atau jumlah
+                membutuhkan manajemen pasokan tambahan
+              </small>
             </div>
             <div
               style="
@@ -695,10 +914,10 @@
                 border-left: 4px solid #dc3545;
               "
             >
-              <strong>Rendah (<14)</strong><br />
+              <strong>Rendah (≤17)</strong><br />
               <small
                 >Material langka/mahal, ragam terbatas, perlu didatangkan dari
-                luar</small
+                luar pembangunan terhambat tanpa suplai eksternal</small
               >
             </div>
           </div>
@@ -854,8 +1073,8 @@
                 <strong>SDM:</strong> Warga lokal dengan pelatihan singkat
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Material lokal, selebihnya diangkut
-                motor roda tiga
+                <strong>Transportasi:</strong> Material lokal, selebihnya
+                diangkut motor roda tiga
               </p>
             </div>
 
@@ -888,8 +1107,8 @@
                 <strong>SDM:</strong> Warga lokal dengan pelatihan singkat
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Material lokal, selebihnya diangkut
-                motor roda tiga
+                <strong>Transportasi:</strong> Material lokal, selebihnya
+                diangkut motor roda tiga
               </p>
             </div>
 
@@ -921,8 +1140,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -954,8 +1173,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -987,8 +1206,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1020,8 +1239,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1054,8 +1273,8 @@
                 <strong>SDM:</strong> Warga lokal dengan pelatihan singkat
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Material lokal, selebihnya diangkut
-                motor roda tiga
+                <strong>Transportasi:</strong> Material lokal, selebihnya
+                diangkut motor roda tiga
               </p>
             </div>
 
@@ -1087,8 +1306,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1121,8 +1340,8 @@
                 <strong>SDM:</strong> SDM semi-terampil atau relawan terlatih
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dibawa tim kecil, muat dalam mobil
-                pickup
+                <strong>Transportasi:</strong> Dibawa tim kecil, muat dalam
+                mobil pickup
               </p>
             </div>
 
@@ -1154,8 +1373,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1187,8 +1406,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1220,8 +1439,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1254,8 +1473,8 @@
                 <strong>SDM:</strong> Warga lokal dengan pelatihan singkat
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Material lokal, selebihnya diangkut
-                motor roda tiga
+                <strong>Transportasi:</strong> Material lokal, selebihnya
+                diangkut motor roda tiga
               </p>
             </div>
 
@@ -1287,8 +1506,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1320,8 +1539,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1353,8 +1572,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1386,8 +1605,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1419,8 +1638,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1452,8 +1671,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1485,8 +1704,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1518,8 +1737,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1551,8 +1770,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1584,8 +1803,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
 
@@ -1617,8 +1836,8 @@
                 <strong>SDM:</strong> Semi-terampil dengan panduan teknis
               </p>
               <p style="font-size: 0.85rem; margin: 4px 0">
-                <strong>Transportasi:</strong> Dikirim dalam komponen modular via truk
-                kecil
+                <strong>Transportasi:</strong> Dikirim dalam komponen modular
+                via truk kecil
               </p>
             </div>
           </div>
@@ -1682,12 +1901,12 @@
             <select id="sdm-availability">
               <option value="">-- Pilih Kategori --</option>
               <option value="tinggi">
-                Tinggi (21-25) - SDM sangat siap dan terampil
+                Tinggi (25-30) - SDM sangat siap dan terampil
               </option>
               <option value="sedang">
-                Sedang (15-20) - SDM cukup kompeten
+                Sedang (18-24) - SDM cukup kompeten
               </option>
-              <option value="rendah">Rendah (<14) - SDM belum siap</option>
+              <option value="rendah">Rendah (≤17) - SDM belum siap</option>
             </select>
           </div>
 
@@ -1696,13 +1915,13 @@
             <select id="material-availability">
               <option value="">-- Pilih Kategori --</option>
               <option value="tinggi">
-                Tinggi (21-25) - Material sangat mudah diperoleh
+                Tinggi (25-30) - Material sangat mudah diperoleh
               </option>
               <option value="sedang">
-                Sedang (15-20) - Material tersedia terbatas
+                Sedang (18-24) - Material tersedia terbatas
               </option>
               <option value="rendah">
-                Rendah (<14) - Material langka/mahal
+                Rendah (<17) - Material langka/mahal
               </option>
             </select>
           </div>
@@ -1718,4 +1937,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
