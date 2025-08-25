@@ -445,3 +445,17 @@ document.addEventListener(
     },
     false
 );
+
+// lainnya form
+document.addEventListener('DOMContentLoaded', function () {
+    // Mengaktifkan input "Lainnya" ketika checkbox lainnya dipilih
+    const lainnyaCheckbox = document.getElementById('lainnya');
+    const lainnyaInput = document.getElementById('lainnya_teks');
+
+    lainnyaCheckbox.addEventListener('change', function () {
+        lainnyaInput.disabled = !this.checked;
+        if (this.checked) {
+            lainnyaInput.focus();
+        }
+    });
+});
