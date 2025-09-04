@@ -202,9 +202,9 @@ h3 {
   text-align: center;
 }
 
-.criteria-table tr:hover {
-  /* background: #ffe312; */
-}
+/* .criteria-table tr:hover {
+  background: #ffe312;
+} */
 
 .score-1 {
   background-color: #ffcccc;
@@ -667,16 +667,22 @@ h3 {
 .criteria-table th {
   /* background-color: #667eea;
   color: white; */
-  font-weight: 500;
-}
-
-.criteria-table input[type="radio"] {
-  transform: scale(1.2);
-  cursor: pointer;
+  font-weight: 600;
 }
 
 .criteria-table td {
   text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.criteria-table td:hover {
+  background-color: #e9ecef;
+}
+
+.criteria-table td.selected {
+  background-color: #d4edda;
+  font-weight: bold;
 }
 
 .score-1 { background-color: #ffcccc; }
@@ -688,11 +694,6 @@ h3 {
 .table-wrapper {
   overflow-x: auto;
   margin-bottom: 15px;
-}
-
-/* Hover effect untuk radio buttons */
-.criteria-table td:hover {
-  background-color: #f0f0f0;
 }
 
 /* Responsive design untuk tabel */
