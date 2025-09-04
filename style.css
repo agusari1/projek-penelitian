@@ -182,60 +182,44 @@ h3 {
   border-collapse: collapse;
   margin: 20px 0;
   background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 15px;
 }
 
 .criteria-table th {
-  background: #1c377c;
-  color: white;
+  border: 1px solid #000;
   padding: 12px 8px;
   text-align: left;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 15px;
+  text-align: center;
 }
 
 .criteria-table td {
+  border: 1px solid #000;
   padding: 10px 8px;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 0.8rem;
-}
-
-.criteria-table tr:nth-child(even) {
-  background-color: #f8f9fa;
+  font-size: 15px;
+  text-align: center;
 }
 
 .criteria-table tr:hover {
-  background-color: #e3f2fd;
-}
-
-.score-indicator {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 15px;
-  color: white;
-  font-weight: 600;
-  font-size: 0.7rem;
-  text-align: center;
-  min-width: 60px;
+  /* background: #ffe312; */
 }
 
 .score-1 {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  background-color: #ffcccc;
 }
 .score-2 {
-  background: linear-gradient(45deg, #f39c12, #e67e22);
+  background-color: #ffd699;
 }
 .score-3 {
-  background: linear-gradient(45deg, #f1c40f, #f39c12);
+  background-color: #fff3cd;
 }
 .score-4 {
-  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  background-color: #c9e6b3;
 }
 .score-5 {
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  background-color: #b3e6cc;
 }
 
 .validation-result {
@@ -293,7 +277,7 @@ h3 {
 }
 
 .category-tinggi {
-  background: #d4edda;
+  background: #b3e6cc;
   color: #155724;
 }
 .category-sedang {
@@ -306,7 +290,7 @@ h3 {
 }
 
 .assessment-form {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #ebeff2 0%, #e9ecef 100%);
   border-radius: 15px;
   padding: 15px;
   margin: 15px 0;
@@ -640,5 +624,84 @@ h3 {
   }
   .inline-group .form-group {
     min-width: 100%;
+  }
+}
+
+/* Styling untuk form penilaian kriteria */
+.criteria-form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.criteria-form h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #667eea;
+}
+
+.score-result {
+  margin-top: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.criteria-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.criteria-table th, .criteria-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.criteria-table th {
+  /* background-color: #667eea;
+  color: white; */
+  font-weight: 500;
+}
+
+.criteria-table input[type="radio"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.criteria-table td {
+  text-align: center;
+}
+
+.score-1 { background-color: #ffcccc; }
+.score-2 { background-color: #ffe6cc; }
+.score-3 { background-color: #ffffcc; }
+.score-4 { background-color: #e6ffcc; }
+.score-5 { background-color: #ccffcc; }
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+/* Hover effect untuk radio buttons */
+.criteria-table td:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive design untuk tabel */
+@media (max-width: 768px) {
+  .criteria-table {
+    font-size: 0.8rem;
+  }
+  
+  .criteria-table th, .criteria-table td {
+    padding: 4px;
   }
 }
