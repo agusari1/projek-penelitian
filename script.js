@@ -1,24 +1,25 @@
+// ===== KODE YANG SUDAH ADA =====
 function showSection(sectionId) {
-    // Hide all sections
-    const sections = document.querySelectorAll(".content-section");
-    sections.forEach((section) => {
-        section.classList.remove("active");
-    });
+  // Hide all sections
+  const sections = document.querySelectorAll(".content-section");
+  sections.forEach((section) => {
+    section.classList.remove("active");
+  });
 
-    // Remove active class from all nav buttons
-    const buttons = document.querySelectorAll(".nav-btn");
-    buttons.forEach((button) => {
-        button.classList.remove("active");
-    });
+  // Remove active class from all nav buttons
+  const buttons = document.querySelectorAll(".nav-btn");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
 
-    // Show selected section
-    document.getElementById(sectionId).classList.add("active");
+  // Show selected section
+  document.getElementById(sectionId).classList.add("active");
 
-    // Add active class to clicked button
-    event.target.classList.add("active");
+  // Add active class to clicked button
+  event.target.classList.add("active");
 }
 
-// TMS Data
+// TMS Data (tetap sama)
 const tmsData = {
     "tinggi-tinggi-tinggi": {
         id: "TMS-01",
@@ -318,144 +319,233 @@ const tmsData = {
     },
 };
 
-function assessTMS() {
-    const location = document.getElementById("location-access").value;
-    const sdm = document.getElementById("sdm-availability").value;
-    const material = document.getElementById("material-availability").value;
+// ===== KODE BARU YANG DITAMBAHKAN =====
 
-    if (!location || !sdm || !material) {
-        alert(
-            "Mohon lengkapi semua pilihan sebelum mendapatkan rekomendasi!"
-        );
-        return;
+// Variabel global untuk menyimpan kategori
+window.currentLocationCategory = null;
+window.currentSdmCategory = null;
+window.currentMaterialCategory = null;
+
+// Fungsi untuk menghitung skor berdasarkan pilihan radio button
+function calculateScore(criteriaPrefix, count) {
+  let total = 0;
+  for (let i = 1; i <= count; i++) {
+    const selected = document.querySelector(`input[name="${criteriaPrefix}-${i}"]:checked`);
+    if (selected) {
+      total += parseInt(selected.value);
     }
-
-    const key = `${sdm}-${location}-${material}`;
-    const recommendation = tmsData[key];
-
-    let resultHtml = "";
-
-    if (recommendation) {
-        resultHtml = `
-                    <div class="result-card">
-                        <h3>🏆 Rekomendasi TMS</h3>
-                        <div style="font-size: 1.1rem; margin: 10px 0;">
-                            <strong>${recommendation.id}: ${recommendation.name}</strong>
-                        </div>
-                        <p style="margin-bottom: 15px; font-size: 0.9rem;">${recommendation.description}</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>📋 Detail Spesifikasi</h3>
-                        <div class="responsive-grid">
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🏠 Ukuran Bangunan:</strong><br>
-                                <span style="font-size: 0.85rem;">${recommendation.size}</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🧱 Material:</strong><br>
-                                <span style="font-size: 0.85rem;">${recommendation.material}</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">⚒️ Teknologi Perakitan:</strong><br>
-                                <span style="font-size: 0.85rem;">${recommendation.technology}</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">👷 Persiapan SDM:</strong><br>
-                                <span style="font-size: 0.85rem;">${recommendation.sdm}</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🚛 Transportasi:</strong><br>
-                                <span style="font-size: 0.85rem;">${recommendation.transport}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-    } else {
-        // Default recommendation for other combinations
-        resultHtml = `
-                    <div class="result-card">
-                        <h3>🏆 Rekomendasi TMS</h3>
-                        <div style="font-size: 1.1rem; margin: 10px 0;">
-                            <strong>TMS-14: Balanced Rural Shelter</strong>
-                        </div>
-                        <p style="margin-bottom: 15px; font-size: 0.9rem;">Solusi seimbang untuk kondisi lapangan dengan kombinasi faktor yang belum terdefinisi secara spesifik.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>📋 Detail Spesifikasi</h3>
-                        <div class="responsive-grid">
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🏠 Ukuran Bangunan:</strong><br>
-                                <span style="font-size: 0.85rem;">15 m² (5x3 meter), bentuk standar modular</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🧱 Material:</strong><br>
-                                <span style="font-size: 0.85rem;">Kombinasi bambu, baja ringan, dan GRC</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">⚒️ Teknologi Perakitan:</strong><br>
-                                <span style="font-size: 0.85rem;">Prefabrikasi ringan, dirakit 3-4 orang</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">👷 Persiapan SDM:</strong><br>
-                                <span style="font-size: 0.85rem;">Semi-terampil dengan panduan teknis</span>
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
-                                <strong style="color: #667eea; font-size: 0.8rem;">🚛 Transportasi:</strong><br>
-                                <span style="font-size: 0.85rem;">Dikirim dalam komponen modular via truk kecil</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-    }
-
-    document.getElementById("assessment-result").innerHTML = resultHtml;
-    document.getElementById("assessment-result").style.display = "block";
-    document
-        .getElementById("assessment-result")
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  return total;
 }
+
+// Fungsi untuk menentukan kategori berdasarkan skor
+function determineCategory(score, maxScore) {
+  const percentage = (score / maxScore) * 100;
+  if (percentage >= 80) return "tinggi";
+  if (percentage >= 60) return "sedang";
+  return "rendah";
+}
+
+// Fungsi untuk memperbarui tampilan skor dan kategori
+function updateScoreDisplay(scoreElement, categoryElement, score, maxScore) {
+  scoreElement.textContent = score;
+  const category = determineCategory(score, maxScore);
+  let categoryText = "";
+  
+  if (category === "tinggi") {
+    categoryText = "Tinggi";
+    categoryElement.style.color = "#28a745";
+  } else if (category === "sedang") {
+    categoryText = "Sedang";
+    categoryElement.style.color = "#ffc107";
+  } else {
+    categoryText = "Rendah";
+    categoryElement.style.color = "#dc3545";
+  }
+  
+  categoryElement.textContent = categoryText;
+  return category;
+}
+
+// Event listener untuk radio buttons
+function setupRadioListeners() {
+  // Untuk lokasi (6 kriteria)
+  for (let i = 1; i <= 6; i++) {
+    const radios = document.querySelectorAll(`input[name="location-${i}"]`);
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        const score = calculateScore("location", 6);
+        const category = updateScoreDisplay(
+          document.getElementById("location-score"),
+          document.getElementById("location-category"),
+          score, 30
+        );
+        window.currentLocationCategory = category;
+      });
+    });
+  }
+  
+  // Untuk SDM (6 kriteria)
+  for (let i = 1; i <= 6; i++) {
+    const radios = document.querySelectorAll(`input[name="sdm-${i}"]`);
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        const score = calculateScore("sdm", 6);
+        const category = updateScoreDisplay(
+          document.getElementById("sdm-score"),
+          document.getElementById("sdm-category"),
+          score, 30
+        );
+        window.currentSdmCategory = category;
+      });
+    });
+  }
+  
+  // Untuk Material (6 kriteria)
+  for (let i = 1; i <= 6; i++) {
+    const radios = document.querySelectorAll(`input[name="material-${i}"]`);
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        const score = calculateScore("material", 6);
+        const category = updateScoreDisplay(
+          document.getElementById("material-score"),
+          document.getElementById("material-category"),
+          score, 30
+        );
+        window.currentMaterialCategory = category;
+      });
+    });
+  }
+}
+
+// Modifikasi fungsi assessTMS
+function assessTMS() {
+  // Pastikan semua sudah dinilai
+  if (!window.currentLocationCategory || !window.currentSdmCategory || !window.currentMaterialCategory) {
+    alert("Mohon lengkapi semua penilaian sebelum mendapatkan rekomendasi!");
+    return;
+  }
+
+  const key = `${window.currentSdmCategory}-${window.currentLocationCategory}-${window.currentMaterialCategory}`;
+  const recommendation = tmsData[key];
+
+  let resultHtml = "";
+
+  if (recommendation) {
+    resultHtml = `
+      <div class="result-card">
+        <h3>🏆 Rekomendasi TMS</h3>
+        <div style="font-size: 1.1rem; margin: 10px 0;">
+          <strong>${recommendation.id}: ${recommendation.name}</strong>
+        </div>
+        <p style="margin-bottom: 15px; font-size: 0.9rem;">${recommendation.description}</p>
+      </div>
+      
+      <div class="card">
+        <h3>📋 Detail Spesifikasi</h3>
+        <div class="responsive-grid">
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">🏠 Ukuran Bangunan:</strong><br>
+            <span style="font-size: 0.85rem;">${recommendation.size}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">🧱 Material:</strong><br>
+            <span style="font-size: 0.85rem;">${recommendation.material}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">⚒️ Teknologi Perakitan:</strong><br>
+            <span style="font-size: 0.85rem;">${recommendation.technology}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">👷 Tenaga Kerja:</strong><br>
+            <span style="font-size: 0.85rem;">${recommendation.sdm}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">🚛 Transportasi:</strong><br>
+            <span style="font-size: 0.85rem;">${recommendation.transport}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>📊 Hasil Penilaian Anda</h3>
+        <div class="responsive-grid">
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">📍 Lokasi:</strong><br>
+            <span style="font-size: 0.85rem;">${window.currentLocationCategory.toUpperCase()}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">👷 SDM:</strong><br>
+            <span style="font-size: 0.85rem;">${window.currentSdmCategory.toUpperCase()}</span>
+          </div>
+          <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
+            <strong style="color: #667eea; font-size: 0.8rem;">🧱 Material:</strong><br>
+            <span style="font-size: 0.85rem;">${window.currentMaterialCategory.toUpperCase()}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    resultHtml = `
+      <div class="result-card">
+        <h3>❌ Tidak Ada Rekomendasi TMS</h3>
+        <p>Berdasarkan kondisi yang Anda input, belum tersedia rekomendasi TMS yang sesuai.</p>
+        <p>Silakan hubungi administrator untuk konsultasi lebih lanjut.</p>
+      </div>
+    `;
+  }
+
+  document.getElementById("assessment-result").innerHTML = resultHtml;
+  document.getElementById("assessment-result").style.display = "block";
+  
+  // Scroll ke hasil
+  document.getElementById("assessment-result").scrollIntoView({ behavior: "smooth" });
+}
+
+// ===== KODE YANG SUDAH ADA (lanjutan) =====
 
 // Touch-friendly navigation for mobile
 document.addEventListener("DOMContentLoaded", function () {
-    const navButtons = document.querySelectorAll(".nav-btn");
-    navButtons.forEach((button) => {
-        button.addEventListener("touchstart", function () {
-            this.style.transform = "translateY(-1px)";
-        });
-        button.addEventListener("touchend", function () {
-            setTimeout(() => {
-                this.style.transform = "";
-            }, 150);
-        });
+  const navButtons = document.querySelectorAll(".nav-btn");
+  navButtons.forEach((button) => {
+    button.addEventListener("touchstart", function () {
+      this.style.transform = "translateY(-1px)";
     });
+    button.addEventListener("touchend", function () {
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+    });
+  });
+  
+  // Panggil setup radio listeners
+  setupRadioListeners();
 });
 
 // Prevent zoom on double tap for iOS
 let lastTouchEnd = 0;
 document.addEventListener(
-    "touchend",
-    function (event) {
-        const now = new Date().getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
-    },
-    false
+  "touchend",
+  function (event) {
+    const now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  },
+  false
 );
 
 // lainnya form
 document.addEventListener('DOMContentLoaded', function () {
-    // Mengaktifkan input "Lainnya" ketika checkbox lainnya dipilih
-    const lainnyaCheckbox = document.getElementById('lainnya');
-    const lainnyaInput = document.getElementById('lainnya_teks');
+  // Mengaktifkan input "Lainnya" ketika checkbox lainnya dipilih
+  const lainnyaCheckbox = document.getElementById('lainnya');
+  const lainnyaInput = document.getElementById('lainnya_teks');
 
-    lainnyaCheckbox.addEventListener('change', function () {
-        lainnyaInput.disabled = !this.checked;
-        if (this.checked) {
-            lainnyaInput.focus();
-        }
-    });
+  lainnyaCheckbox.addEventListener('change', function () {
+    lainnyaInput.disabled = !this.checked;
+    if (this.checked) {
+      lainnyaInput.focus();
+    }
+  });
 });
