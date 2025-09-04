@@ -319,21 +319,23 @@ const tmsData = {
     },
 };
 
-// ===== KODE BARU YANG DITAMBAHKAN =====
-
 // Variabel global untuk menyimpan kategori
 window.currentLocationCategory = null;
 window.currentSdmCategory = null;
 window.currentMaterialCategory = null;
 
-// Fungsi untuk menghitung skor berdasarkan pilihan radio button
-function calculateScore(criteriaPrefix, count) {
+// Objek untuk menyimpan pilihan user
+window.userSelections = {
+  location: {},
+  sdm: {},
+  material: {}
+};
+
+// Fungsi untuk menghitung skor berdasarkan pilihan
+function calculateScore(criteriaType) {
   let total = 0;
-  for (let i = 1; i <= count; i++) {
-    const selected = document.querySelector(`input[name="${criteriaPrefix}-${i}"]:checked`);
-    if (selected) {
-      total += parseInt(selected.value);
-    }
+  for (const key in window.userSelections[criteriaType]) {
+    total += window.userSelections[criteriaType][key];
   }
   return total;
 }
@@ -367,61 +369,60 @@ function updateScoreDisplay(scoreElement, categoryElement, score, maxScore) {
   return category;
 }
 
-// Event listener untuk radio buttons
-function setupRadioListeners() {
-  // Untuk lokasi (6 kriteria)
-  for (let i = 1; i <= 6; i++) {
-    const radios = document.querySelectorAll(`input[name="location-${i}"]`);
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        const score = calculateScore("location", 6);
-        const category = updateScoreDisplay(
-          document.getElementById("location-score"),
-          document.getElementById("location-category"),
-          score, 30
-        );
-        window.currentLocationCategory = category;
-      });
-    });
-  }
+// Fungsi untuk menangani klik pada sel tabel
+function handleCellClick(event) {
+  const cell = event.target;
+  if (!cell.hasAttribute('data-criteria') || !cell.hasAttribute('data-score')) return;
   
-  // Untuk SDM (6 kriteria)
-  for (let i = 1; i <= 6; i++) {
-    const radios = document.querySelectorAll(`input[name="sdm-${i}"]`);
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        const score = calculateScore("sdm", 6);
-        const category = updateScoreDisplay(
-          document.getElementById("sdm-score"),
-          document.getElementById("sdm-category"),
-          score, 30
-        );
-        window.currentSdmCategory = category;
-      });
-    });
-  }
+  const criteria = cell.getAttribute('data-criteria');
+  const score = parseInt(cell.getAttribute('data-score'));
+  const criteriaType = criteria.split('-')[0]; // location, sdm, atau material
   
-  // Untuk Material (6 kriteria)
-  for (let i = 1; i <= 6; i++) {
-    const radios = document.querySelectorAll(`input[name="material-${i}"]`);
-    radios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        const score = calculateScore("material", 6);
-        const category = updateScoreDisplay(
-          document.getElementById("material-score"),
-          document.getElementById("material-category"),
-          score, 30
-        );
-        window.currentMaterialCategory = category;
-      });
-    });
+  // Hapus seleksi sebelumnya untuk kriteria ini
+  const parentRow = cell.parentElement;
+  const cells = parentRow.querySelectorAll('td[data-criteria]');
+  cells.forEach(c => c.classList.remove('selected'));
+  
+  // Tandai sel yang dipilih
+  cell.classList.add('selected');
+  
+  // Simpan pilihan user
+  window.userSelections[criteriaType][criteria] = score;
+  
+  // Hitung dan perbarui skor total
+  const totalScore = calculateScore(criteriaType);
+  const category = updateScoreDisplay(
+    document.getElementById(`${criteriaType}-score`),
+    document.getElementById(`${criteriaType}-category`),
+    totalScore, 30
+  );
+  
+  // Simpan kategori untuk digunakan nanti
+  if (criteriaType === 'location') {
+    window.currentLocationCategory = category;
+  } else if (criteriaType === 'sdm') {
+    window.currentSdmCategory = category;
+  } else if (criteriaType === 'material') {
+    window.currentMaterialCategory = category;
   }
+}
+
+// Event listener untuk tabel
+function setupTableListeners() {
+  const tables = document.querySelectorAll('.criteria-table');
+  tables.forEach(table => {
+    table.addEventListener('click', handleCellClick);
+  });
 }
 
 // Modifikasi fungsi assessTMS
 function assessTMS() {
   // Pastikan semua sudah dinilai
-  if (!window.currentLocationCategory || !window.currentSdmCategory || !window.currentMaterialCategory) {
+  const locationCount = Object.keys(window.userSelections.location).length;
+  const sdmCount = Object.keys(window.userSelections.sdm).length;
+  const materialCount = Object.keys(window.userSelections.material).length;
+  
+  if (locationCount < 6 || sdmCount < 6 || materialCount < 6) {
     alert("Mohon lengkapi semua penilaian sebelum mendapatkan rekomendasi!");
     return;
   }
@@ -472,15 +473,15 @@ function assessTMS() {
         <div class="responsive-grid">
           <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
             <strong style="color: #667eea; font-size: 0.8rem;">📍 Lokasi:</strong><br>
-            <span style="font-size: 0.85rem;">${window.currentLocationCategory.toUpperCase()}</span>
+            <span style="font-size: 0.85rem;">${window.currentLocationCategory.toUpperCase()} (${calculateScore('location')}/30)</span>
           </div>
           <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
             <strong style="color: #667eea; font-size: 0.8rem;">👷 SDM:</strong><br>
-            <span style="font-size: 0.85rem;">${window.currentSdmCategory.toUpperCase()}</span>
+            <span style="font-size: 0.85rem;">${window.currentSdmCategory.toUpperCase()} (${calculateScore('sdm')}/30)</span>
           </div>
           <div style="background: white; padding: 10px; border-radius: 8px; border-left: 3px solid #667eea;">
             <strong style="color: #667eea; font-size: 0.8rem;">🧱 Material:</strong><br>
-            <span style="font-size: 0.85rem;">${window.currentMaterialCategory.toUpperCase()}</span>
+            <span style="font-size: 0.85rem;">${window.currentMaterialCategory.toUpperCase()} (${calculateScore('material')}/30)</span>
           </div>
         </div>
       </div>
@@ -502,50 +503,12 @@ function assessTMS() {
   document.getElementById("assessment-result").scrollIntoView({ behavior: "smooth" });
 }
 
-// ===== KODE YANG SUDAH ADA (lanjutan) =====
-
-// Touch-friendly navigation for mobile
-document.addEventListener("DOMContentLoaded", function () {
-  const navButtons = document.querySelectorAll(".nav-btn");
-  navButtons.forEach((button) => {
-    button.addEventListener("touchstart", function () {
-      this.style.transform = "translateY(-1px)";
-    });
-    button.addEventListener("touchend", function () {
-      setTimeout(() => {
-        this.style.transform = "";
-      }, 150);
-    });
-  });
-  
-  // Panggil setup radio listeners
-  setupRadioListeners();
-});
-
-// Prevent zoom on double tap for iOS
-let lastTouchEnd = 0;
-document.addEventListener(
-  "touchend",
-  function (event) {
-    const now = new Date().getTime();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  },
-  false
-);
-
-// lainnya form
-document.addEventListener('DOMContentLoaded', function () {
+// Panggil setup saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
   // Mengaktifkan input "Lainnya" ketika checkbox lainnya dipilih
   const lainnyaCheckbox = document.getElementById('lainnya');
   const lainnyaInput = document.getElementById('lainnya_teks');
-
-  lainnyaCheckbox.addEventListener('change', function () {
-    lainnyaInput.disabled = !this.checked;
-    if (this.checked) {
-      lainnyaInput.focus();
-    }
-  });
+  
+  // Tambahkan setup table listeners
+  setupTableListeners();
 });
